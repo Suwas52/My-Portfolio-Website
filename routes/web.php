@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeSectionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('Frontend.index');
 });
 
 Route::get('/dashboard', function () {
@@ -34,7 +35,15 @@ Route::controller(AdminController::class)->group(function (){
    Route::get('/admin/logout','AdminLogout')->name('admin.logout');
    Route::get('/admin/profile','AdminProfile')->name('admin.profile');
    Route::post('/admin/profile/store','AdminProfileStore')->name('admin.profile.store');
+   Route::get('/change/password','ChangePassword')->name('change.password');
+   Route::post('/update/password','UpdatePassword')->name('update.password');
 });
+
+Route::controller(HomeSectionController::class)->group(function (){
+    Route::get('/home/slide','HomeSlider')->name('home.slide');
+    Route::post('/home/update','UpdateHome')->name('update.home');
+ });
+ 
 
 
 require __DIR__.'/auth.php';

@@ -1,6 +1,6 @@
 <div class="sidebar-wrapper" data-simplebar="true">
     <div class="sidebar-header">
-        
+
         <div>
             <h4 class="logo-text">Subash Danuwar</h4>
         </div>
@@ -10,12 +10,15 @@
     <!--navigation-->
     <ul class="metismenu" id="menu">
         <li>
-            <a href="javascript:;" class="has-arrow">
+            <a href="{{ route('home.slide') }}" class="has-arrow">
                 <div class="parent-icon"><i class='bx bx-home-circle'></i>
                 </div>
-                <div class="menu-title">Dashboard</div>
+                <div class="menu-title">Home Slide Setup</div>
             </a>
-        
+            <ul>
+
+            </ul>
+
         </li>
         <li>
             <a href="javascript:;" class="has-arrow">
@@ -23,9 +26,9 @@
                 </div>
                 <div class="menu-title">Application</div>
             </a>
-        
+
         </li>
-        
-        
+
+
     </ul>
 </div>
