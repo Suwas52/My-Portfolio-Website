@@ -15,16 +15,14 @@
                 </div>
                 <div class="menu-title">Home Slide Setup</div>
             </a>
-            <ul>
 
-            </ul>
 
         </li>
         <li>
-            <a href="javascript:;" class="has-arrow">
+            <a href="{{ route('all.about.page') }}" class="has-arrow">
                 <div class="parent-icon"><i class="bx bx-category"></i>
                 </div>
-                <div class="menu-title">Application</div>
+                <div class="menu-title">About Page Setup</div>
             </a>
 
         </li>

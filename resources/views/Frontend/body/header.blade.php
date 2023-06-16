@@ -10,8 +10,8 @@
                     </a>
                 </li>
                 <li class="nav__item">
-                    <a href="#skills" class="nav__link">
-                        <i class="ri-trophy-line"></i> Skills
+                    <a href="{{ route('about.part') }}" class="nav__link">
+                        <i class="ri-trophy-line"></i> About
                     </a>
                 </li>
                 <li class="nav__item">

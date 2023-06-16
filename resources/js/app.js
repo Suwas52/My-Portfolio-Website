@@ -1,6 +1,8 @@
-import './bootstrap';
+import "./bootstrap";
 
-import Alpine from 'alpinejs';
+import "../sass/app.scss";
+
+import Alpine from "alpinejs";
 
 window.Alpine = Alpine;
 

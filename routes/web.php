@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeSectionController;
+use App\Http\Controllers\AboutSectionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,6 +43,12 @@ Route::controller(AdminController::class)->group(function (){
 Route::controller(HomeSectionController::class)->group(function (){
     Route::get('/home/slide','HomeSlider')->name('home.slide');
     Route::post('/home/update','UpdateHome')->name('update.home');
+ });
+
+Route::controller(AboutSectionController::class)->group(function (){
+    Route::get('/about/part','AboutPart')->name('about.part');
+    Route::get('/all/about/page','AllAboutPage')->name('all.about.page');
+    Route::post('/update/about/section','UpdateAbout')->name('update.about');
  });
  
 
