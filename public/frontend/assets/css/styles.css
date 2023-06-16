@@ -501,14 +501,11 @@ body.dark-theme {
     width: 40px;
 }
 
-.skill__name {
+.skills__name {
+    color: var(--text-color-light);
+    text-align: center;
     font-size: var(--small-font-size);
     margin-bottom: 0.25rem;
-}
-
-.skills__subtitle {
-    font-size: var(--tiny-font-size);
-    color: var(--text-color-light);
 }
 
 /* Animation skills */

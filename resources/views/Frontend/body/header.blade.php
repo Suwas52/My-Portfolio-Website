@@ -5,7 +5,7 @@
         <div class="nav__menu" id="nav-menu">
             <ul class="nav__list grid">
                 <li class="nav__item">
-                    <a href="#home" class="nav__link active-link">
+                    <a href="{{ route('main-page') }}" class="nav__link active-link">
                         <i class="ri-home-5-line"></i> Home
                     </a>
                 </li>
