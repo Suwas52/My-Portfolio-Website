@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeSectionController;
 use App\Http\Controllers\AboutSectionController;
 use App\Http\Controllers\SkillsSectionController;
+use App\Http\Controllers\ServicesSectionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -48,7 +49,7 @@ Route::controller(HomeSectionController::class)->group(function (){
  });
 
 Route::controller(AboutSectionController::class)->group(function (){
-    Route::get('/about/part','AboutPart')->name('about.part');
+    Route::get('/about','AboutPart')->name('about.part');
     Route::get('/all/about/page','AllAboutPage')->name('all.about.page');
     Route::post('/update/about/section','UpdateAbout')->name('update.about');
  });
@@ -68,7 +69,12 @@ Route::controller(SkillsSectionController::class)->group(function (){
     Route::get('/delete/skill/data/{id}','DeleteSkillData')->name('delete.skill_data');
 
     
-    
+ });
+
+
+Route::controller(ServicesSectionController::class)->group(function (){
+    Route::get('/services','ServicesSection')->name('services.section');
+
  });
  
 

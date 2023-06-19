@@ -76,7 +76,7 @@ class SkillsSectionController extends Controller
         
             $image = $request->file('skill_image');
             $img_name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
-            Image::make($image)->resize(960,720)->save('upload/skill_images/'.$img_name_gen);
+            Image::make($image)->resize(1000,1200)->save('upload/skill_images/'.$img_name_gen);
             $save_img_url = 'upload/skill_images/'.$img_name_gen;
             SkillData::insert([
                 'skill_title_id' => $request->skill_title_id ,
@@ -106,7 +106,7 @@ class SkillsSectionController extends Controller
 
         $image = $request->file('skill_image');
         $img_name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
-        Image::make($image)->resize(960,720)->save('upload/skill_images/'.$img_name_gen);
+        Image::make($image)->resize(960,960)->save('upload/skill_images/'.$img_name_gen);
         $save_img_url = 'upload/skill_images/'.$img_name_gen;
 
         if(file_exists($old_image)){

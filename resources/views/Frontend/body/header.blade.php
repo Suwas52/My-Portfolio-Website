@@ -14,13 +14,13 @@
                         <i class="ri-trophy-line"></i> About
                     </a>
                 </li>
-                <li class="nav__item">
+                {{-- <li class="nav__item">
                     <a href="#qualification" class="nav__link">
                         <i class="ri-book-open-line"></i> Qualification
                     </a>
-                </li>
+                </li> --}}
                 <li class="nav__item">
-                    <a href="#services" class="nav__link">
+                    <a href="{{ route('services.section') }}" class="nav__link">
                         <i class="ri-briefcase-line"></i> Services
                     </a>
                 </li>

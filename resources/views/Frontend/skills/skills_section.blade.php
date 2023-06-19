@@ -91,7 +91,6 @@
                 @endforeach
 
 
-
                 {{-- <div class="skills__data">
                     <div class="skills__blob">
                         <img src="{{ asset('frontend/assets/img/sketch-2.svg') }} " alt="skills image" />
