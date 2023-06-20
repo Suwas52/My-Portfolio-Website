@@ -25,7 +25,7 @@
                     </a>
                 </li>
                 <li class="nav__item">
-                    <a href="#projects" class="nav__link">
+                    <a href="{{ route('projects.section') }}" class="nav__link">
                         <i class="ri-image-line"></i> Project
                     </a>
                 </li>

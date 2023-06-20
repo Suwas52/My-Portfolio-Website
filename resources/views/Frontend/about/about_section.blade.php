@@ -1,13 +1,6 @@
 @extends('Frontend.main_master')
 @section('Frontend')
     <style>
-        .content {
-
-            margin: 10px;
-
-            padding: 10px;
-        }
-
         .content-description {
             padding: 20px;
 

@@ -7,6 +7,7 @@ use App\Http\Controllers\HomeSectionController;
 use App\Http\Controllers\AboutSectionController;
 use App\Http\Controllers\SkillsSectionController;
 use App\Http\Controllers\ServicesSectionController;
+use App\Http\Controllers\ProjectsSectionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -74,6 +75,12 @@ Route::controller(SkillsSectionController::class)->group(function (){
 
 Route::controller(ServicesSectionController::class)->group(function (){
     Route::get('/services','ServicesSection')->name('services.section');
+
+ });
+
+
+Route::controller(ProjectsSectionController::class)->group(function (){
+    Route::get('/projects','ProjectSection')->name('projects.section');
 
  });
  
