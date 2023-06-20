@@ -7,7 +7,7 @@ use App\Http\Controllers\HomeSectionController;
 use App\Http\Controllers\AboutSectionController;
 use App\Http\Controllers\SkillsSectionController;
 use App\Http\Controllers\ServicesSectionController;
-use App\Http\Controllers\ProjectsSectionController;
+use App\Http\Controllers\PortfolioSectionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -79,8 +79,13 @@ Route::controller(ServicesSectionController::class)->group(function (){
  });
 
 
-Route::controller(ProjectsSectionController::class)->group(function (){
-    Route::get('/projects','ProjectSection')->name('projects.section');
+Route::controller(PortfolioSectionController::class)->group(function (){
+    Route::get('/portfolio','PortfolioSection')->name('portfolio.section');
+    Route::get('/all/portfolio/title','AllPortfolioTitle')->name('all.portfolio_title');
+    Route::get('/add/portfolio/title','AddPortfolioTitle')->name('add.portfolio_title');
+    Route::post('/store/portfolio/title','StorePortfolioTitle')->name('store.portfolio_title');
+    Route::get('/edit/portfolio/title/{id}','EditPortfolioTitle')->name('edit.portfolio_title');
+    Route::post('/update/portfolio/title','UpdatePortfolioTitle')->name('update.portfolio_title');
 
  });
  

@@ -2,10 +2,10 @@
 @section('Frontend')
     <style>
         /* project section start */
-        /* .projects-section {
-                                                                                background: #fff;
-                                                                                transition: all 0.7s linear;
-                                                                            } */
+        /* .portfolio-section {
+                                                                                                                    background: #fff;
+                                                                                                                    transition: all 0.7s linear;
+                                                                                                                } */
 
         .p-btns {
             display: flex;
@@ -16,13 +16,13 @@
 
         }
 
-        .projects-images {
+        .portfolio-images {
             gap: 3.2rem;
             margin-top: 4rem;
 
         }
 
-        .projects-images img {
+        .portfolio-images img {
             width: 100%;
             border-radius: 7px;
             position: relative;
@@ -91,7 +91,7 @@
 
 
         .p-btn-active {
-            transform: translateY(-0.5rem);
+            transform: translateY(0.5rem);
         }
 
         .p-img-not-active {
@@ -108,53 +108,53 @@
             grid-template-columns: repeat(4, 1fr);
         }
     </style>
-    <section class="projects-section section" id="projects">
-        <h2 class="section__title">Projects</h2>
+    <section class="Portfolio-section section" id="portfolio">
+        <h2 class="section__title">Portfolio</h2>
 
         <div class="p-btns">
             <div class="btns p-btn" data-btn-num="1">Website</div>
             <div class="btns p-btn" data-btn-num="2">Youtube</div>
             <div class="btns p-btn" data-btn-num="3">Design</div>
         </div>
-        <div class="services__container container grid grid-three-column section__border projects-images">
+        <div class="services__container container grid grid-three-column section__border portfolio-images">
 
             <div class="img-overlay p-btn-2">
-                <img src="{{ asset('frontend/assets/img/project1.jpg') }}" alt="projects" />
+                <img src="{{ asset('frontend/assets/img/project1.jpg') }}" alt="portfolio" />
                 <div class="overlay">
                     <a href="" target="_suwas" class="common-heading">Project 1</a>
                 </div>
             </div>
 
             <div class="img-overlay p-btn-1">
-                <img src="{{ asset('frontend/assets/img/project2.jpg') }}" alt="projects" />
+                <img src="{{ asset('frontend/assets/img/project2.jpg') }}" alt="portfolio" />
                 <div class="overlay">
                     <a href="" target="_suwas" class="common-heading">Project 2</a>
                 </div>
             </div>
 
             <div class="img-overlay p-btn-2 ">
-                <img src="{{ asset('frontend/assets/img/project3.jpg') }}" alt="projects" />
+                <img src="{{ asset('frontend/assets/img/project3.jpg') }}" alt="portfolio" />
                 <div class="overlay">
                     <a href="" target="_suwas" class="common-heading"> Project 3</a>
                 </div>
             </div>
 
             <div class="img-overlay p-btn-1">
-                <img src="{{ asset('frontend/assets/img/project4.jpg') }}" alt="projects" />
+                <img src="{{ asset('frontend/assets/img/project4.jpg') }}" alt="portfolio" />
                 <div class="overlay">
                     <a href="" target="_suwas" class="common-heading">Project 4</a>
                 </div>
             </div>
 
             <div class="img-overlay p-btn-3">
-                <img src="{{ asset('frontend/assets/img/project1.jpg') }}" alt="projects" />
+                <img src="{{ asset('frontend/assets/img/project1.jpg') }}" alt="portfolio" />
                 <div class="overlay">
                     <a href="{{ route('about.part') }}" target="_suwas" class="common-heading">Project 5</a>
                 </div>
             </div>
 
             <div class="img-overlay p-btn-3">
-                <img src="{{ asset('frontend/assets/img/project2.jpg') }}" alt="projects" />
+                <img src="{{ asset('frontend/assets/img/project2.jpg') }}" alt="portfolio" />
                 <div class="overlay">
                     <a href="https://www.youtube.com/" target="_suwas" class="common-heading"> Project 6</a>
                 </div>
@@ -178,9 +178,9 @@
         p_btns.addEventListener('click', (e) => {
             const p_btn_clicked = e.target;
 
-            p_btn.forEach((curElem) => curElem.classList.remove("p-btn-active"));
+            p_btn.forEach((curElem) => curElem.classList.toggle("p-btn-active"));
 
-            p_btn_clicked.classList.add('p-btn-active');
+            p_btn_clicked.classList.toggle('p-btn-active');
 
             const btn_num = p_btn_clicked.dataset.btnNum;
             console.log(btn_num);
@@ -189,9 +189,9 @@
             console.log(img_active);
 
 
-            p_img_elem.forEach((curElem) => curElem.classList.add('p-img-not-active'));
+            p_img_elem.forEach((curElem) => curElem.classList.toggle('p-img-not-active'));
 
-            img_active.forEach((curElem) => curElem.classList.remove("p-img-not-active"));
+            img_active.forEach((curElem) => curElem.classList.toggle("p-img-not-active"));
 
 
         })
