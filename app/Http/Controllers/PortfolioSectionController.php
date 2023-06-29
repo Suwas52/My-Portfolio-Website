@@ -118,7 +118,7 @@ class PortfolioSectionController extends Controller
         $portfolio_id= $request->id;
         $old_image = $request->old_img;
 
-        if($request->file('brand_logo')){
+        if($request->file('portfolio_img')){
 
             $image = $request->file('portfolio_img');
             $img_name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();

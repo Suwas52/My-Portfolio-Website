@@ -59,6 +59,15 @@
 
 
         </li>
+        <li>
+            <a href="{{ route('all.testimonial') }}" class="has-arrow">
+                <div class="parent-icon"><i class="bx bx-category"></i>
+                </div>
+                <div class="menu-title">Testimonial</div>
+            </a>
+
+
+        </li>
 
 
 

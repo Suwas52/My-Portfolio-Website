@@ -1,12 +1,6 @@
 @extends('Frontend.main_master')
 @section('Frontend')
     <style>
-        /* project section start */
-        /* .portfolio-section {
-                                                                                                                                                                                                                background: #fff;
-                                                                                                                                                                                                                transition: all 0.7s linear;
-                                                                                                                                                                                                            } */
-
         .p-btns {
             display: flex;
             justify-content: center;
@@ -135,14 +129,6 @@
                     </div>
                 </div>
             @endforeach
-
-
-
-
-
-
-
-
 
 
         </div>

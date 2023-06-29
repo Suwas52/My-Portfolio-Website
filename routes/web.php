@@ -8,6 +8,8 @@ use App\Http\Controllers\AboutSectionController;
 use App\Http\Controllers\SkillsSectionController;
 use App\Http\Controllers\ServicesSectionController;
 use App\Http\Controllers\PortfolioSectionController;
+use App\Http\Controllers\TestimonialSectionController;
+use App\Http\Controllers\ContactSectionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -98,6 +100,23 @@ Route::controller(PortfolioSectionController::class)->group(function (){
 
 
 
+ });
+
+
+Route::controller(TestimonialSectionController::class)->group(function (){
+    Route::get('/all/testimonial','AllTestimonial')->name('all.testimonial');
+    Route::get('/add/testimonials','AddTestimonials')->name('add.testimonials');
+    Route::post('/store/testimonial','StoreTestimonial')->name('store.testimonial');
+    Route::get('/edit/testimonial/{id}','EditTestimonial')->name('edit.testimonial');
+    Route::post('/update/testimonial','UpdateTestimonial')->name('update.testimonial');
+    Route::get('/delete/testimonial/{id}','DeleteTestimonial')->name('delete.testimonial');
+    
+ });
+
+Route::controller(ContactSectionController::class)->group(function (){
+    Route::get('/contact','ContactSection')->name('contact_section');
+    
+    
  });
  
 

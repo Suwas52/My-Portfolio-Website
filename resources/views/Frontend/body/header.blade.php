@@ -1,6 +1,6 @@
 <header class="header" id="header">
     <nav class="nav container">
-        <a href="#" class="nav__logo"> Subash </a>
+        <a href="" class="nav__logo"> Subash </a>
 
         <div class="nav__menu" id="nav-menu">
             <ul class="nav__list grid">
@@ -30,7 +30,7 @@
                     </a>
                 </li>
                 <li class="nav__item">
-                    <a href="#contact" class="nav__link">
+                    <a href="{{ route('contact_section') }}" class="nav__link">
                         <i class="ri-chat-3-line"></i> Contact
                     </a>
                 </li>
