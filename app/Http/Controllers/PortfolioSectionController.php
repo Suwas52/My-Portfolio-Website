@@ -105,5 +105,81 @@ class PortfolioSectionController extends Controller
         return redirect()->back()->with($notification);
     }
 
+    public function EditPortfolio($id){
+        $portfolio_cat = PortfolioCategory::orderBy('portfolio_title','ASC')->get();
+        $portfolio = portfolio::findOrFail($id);
+        return view('Backend.portfolio.edit_portfolios',compact('portfolio','portfolio_cat'));
+    }
+
+    public function UpdatePortfolio(Request $request){
+        
+
+
+        $portfolio_id= $request->id;
+        $old_image = $request->old_img;
+
+        if($request->file('brand_logo')){
+
+            $image = $request->file('portfolio_img');
+            $img_name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
+            Image::make($image)->resize(640,427)->save('upload/portfolio_images/'.$img_name_gen);
+            $portfolio_img = 'upload/portfolio_images/'.$img_name_gen;
+
+            if(file_exists($old_image)){
+                unlink($old_image);
+            }
+
+            portfolio::find($portfolio_id)->update([
+                'portfolio_cat_id' => $request->portfolio_cat_id ,
+                'portfolio_name' => $request->portfolio_name ,
+                'portfolio_url' => $request->portfolio_url ,
+                'portfolio_desc' => $request->portfolio_desc,
+                'portfolio_img' => $portfolio_img,
+            ]);
+
+
+            $notification = array(
+                'message' => ' Portfolio updated with Image Successfully',
+                'alert-type' => 'success'
+            );
+
+            return redirect()->back()->with($notification);
+        }
+        else{
+            portfolio::find($portfolio_id)->update([
+                'portfolio_cat_id' => $request->portfolio_cat_id ,
+                'portfolio_name' => $request->portfolio_name ,
+                'portfolio_url' => $request->portfolio_url ,
+                'portfolio_desc' => $request->portfolio_desc,
+            ]);
+
+
+            $notification = array(
+                'message' => ' Portfolio updated without Image Successfully',
+                'alert-type' => 'success'
+            );
+
+            return redirect()->back()->with($notification);
+        
+        }
+    }
+
+    public function DeletePortfolio($id){
+        $portfolio_id =portfolio::findOrFail($id);
+        $portfolio_img =$portfolio_id->portfolio_img;
+
+        unlink($portfolio_img);
+
+        portfolio::findOrFail($id)->delete();
+
+        $notification = array(
+            'message' => ' Portfolio Delete  Successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->back()->with($notification);
+
+    }
+
    
 }

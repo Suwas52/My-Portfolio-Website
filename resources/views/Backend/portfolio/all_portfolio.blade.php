@@ -55,11 +55,13 @@
                                                 <td>{{ $portfolio->portfolio_desc }}</td>
 
                                                 <td>
-                                                    <a class="btn btn-primary" href="">Edit</a>
+                                                    <a class="btn btn-primary"
+                                                        href="{{ route('edit_portfolios', $portfolio->id) }}">Edit</a>
 
                                                 </td>
                                                 <td>
-                                                    <a class="btn btn-danger" href="">Delete</a>
+                                                    <a class="btn btn-danger"
+                                                        href="{{ route('delete_portfolio', $portfolio->id) }}">Delete</a>
 
                                                 </td>
                                             </tr>

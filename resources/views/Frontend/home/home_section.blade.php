@@ -17,11 +17,16 @@
                 </p>
 
                 <div class="home__social">
-                    <a href="#" target="_blank" class="home__social-link"><i class="ri-facebook-box-line"></i></a>
-                    <a href="#" target="_blank" class="home__social-link"><i class="ri-twitter-line"></i></a>
-                    <a href="#" target="_blank" class="home__social-link"><i class="ri-instagram-line"></i></a>
-                    <a href="#" target="_blank" class="home__social-link"><i class="ri-linkedin-box-line"></i></a>
-                    <a href="#" target="_blank" class="home__social-link"><i class="ri-github-line"></i></a>
+                    <a href="https://www.facebook.com/su.waas.5/" target="_blank" class="home__social-link"><i
+                            class="ri-facebook-box-line"></i></a>
+                    <a href="https://twitter.com/suwas_danuwar" target="_blank" class="home__social-link"><i
+                            class="ri-twitter-line"></i></a>
+                    <a href="https://www.instagram.com/su_waas52/" target="_blank" class="home__social-link"><i
+                            class="ri-instagram-line"></i></a>
+                    <a href="https://www.linkedin.com/in/subash-danuwar/" target="_blank" class="home__social-link"><i
+                            class="ri-linkedin-box-line"></i></a>
+                    <a href="https://github.com/Suwas52" target="_blank" class="home__social-link"><i
+                            class="ri-github-line"></i></a>
                 </div>
 
                 <div class="CV__button">
