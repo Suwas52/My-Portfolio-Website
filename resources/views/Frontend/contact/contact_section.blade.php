@@ -1,5 +1,12 @@
 @extends('Frontend.main_master')
 @section('Frontend')
+    <style>
+        .text-danger {
+            color: red;
+            font-size: 20px;
+            margin: 30px 0 0 20px;
+        }
+    </style>
     <section class="contact section" id="contact">
         <h2 class="section__title">Contact Me</h2>
         <span class="section__subtitle">Get in touch</span>
@@ -40,20 +47,43 @@
                     <i class="ri-send-plane-line"></i> Write me your project
                 </h3>
 
-                <form action="" class="contact__form" id="contact-form">
+                <form method="post" action="{{ route('contact_message') }}" class="contact__form" id="contact-form">
+                    @csrf
                     <div class="contact__form-div">
                         <label class="contact__form-tag">Names</label>
-                        <input type="text" name="user_name" required placeholder="Write your names"
-                            class="contact__form-input" id="contact-name" />
+                        <input type="text" name="contact_name" placeholder="Write your names" class="contact__form-input"
+                            id="contact-name" />
+                        <div class="text-danger">
+                            <span>
+                                @error('contact_name')
+                                    {{ $message }}
+                                @enderror
+                            </span>
+                        </div>
+
                     </div>
                     <div class="contact__form-div">
                         <label class="contact__form-tag">Mail</label>
-                        <input type="email" name="user_email" required placeholder="Write your email"
+                        <input type="text" name="contact_email" placeholder="Write your email"
                             class="contact__form-input" id="contact-email" />
+                        <div class="text-danger">
+                            <span>
+                                @error('contact_email')
+                                    {{ $message }}
+                                @enderror
+                            </span>
+                        </div>
                     </div>
                     <div class="contact__form-div contact__form-area">
                         <label class="contact__form-tag">Message</label>
-                        <textarea placeholder="Write your Message" name="user_project" id="contact-project" class="contact__form-input"></textarea>
+                        <textarea placeholder="Write your Message" name="message" id="contact-project" class="contact__form-input"></textarea>
+                        <div class="text-danger">
+                            <span>
+                                @error('message')
+                                    {{ $message }}
+                                @enderror
+                            </span>
+                        </div>
                     </div>
 
                     <button type="submit" class="contact__button">

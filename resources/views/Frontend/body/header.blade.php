@@ -1,6 +1,6 @@
 <header class="header" id="header">
     <nav class="nav container">
-        <a href="" class="nav__logo"> Subash </a>
+        <a href="{{ route('main-page') }}" class="nav__logo"> Subash </a>
 
         <div class="nav__menu" id="nav-menu">
             <ul class="nav__list grid">

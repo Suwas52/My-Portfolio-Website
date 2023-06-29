@@ -115,7 +115,7 @@ Route::controller(TestimonialSectionController::class)->group(function (){
 
 Route::controller(ContactSectionController::class)->group(function (){
     Route::get('/contact','ContactSection')->name('contact_section');
-    
+    Route::post('/contact/Message','ContactMessage')->name('contact_message');
     
  });
  
