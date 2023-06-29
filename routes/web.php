@@ -86,6 +86,14 @@ Route::controller(PortfolioSectionController::class)->group(function (){
     Route::post('/store/portfolio/title','StorePortfolioTitle')->name('store.portfolio_title');
     Route::get('/edit/portfolio/title/{id}','EditPortfolioTitle')->name('edit.portfolio_title');
     Route::post('/update/portfolio/title','UpdatePortfolioTitle')->name('update.portfolio_title');
+    
+    
+    // Portfolio part
+    Route::get('/all/portfolios','AllPortfolios')->name('all.portfolios');
+    Route::get('/add/portfolios','AddPortfolios')->name('add.portfolios');
+    Route::post('/store/portfolios','StorePortfolios')->name('store.portfolios');
+
+
 
  });
  

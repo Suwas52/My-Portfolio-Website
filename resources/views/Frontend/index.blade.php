@@ -88,52 +88,25 @@
             <div class="projects__container swiper">
                 <div class="swiper-wrapper">
                     <!-- Project 1 -->
-                    <div class="projects__content swiper-slide">
-                        <img src="{{ asset('frontend/assets/img/project1.jpg') }} " alt="Projects Image"
-                            class="projects__img" />
-                        <div>
-                            <span class="projects__subtitle">Web</span>
-                            <h1 class="projects__title">Modern Website</h1>
-                            <a href="#" class="projects__button">
-                                View Demo <i class="ri-arrow-right-line"></i></a>
-                        </div>
-                    </div>
 
-                    <!-- Project 1 -->
-                    <div class="projects__content swiper-slide">
-                        <img src="{{ asset('frontend/assets/img/project2.jpg') }} " alt="Projects Image"
-                            class="projects__img" />
-                        <div>
-                            <span class="projects__subtitle">Web</span>
-                            <h1 class="projects__title">ECommerce Store</h1>
-                            <a href="#" class="projects__button">
-                                View Demo <i class="ri-arrow-right-line"></i></a>
-                        </div>
-                    </div>
+                    @php
+                        $portfolios = App\Models\portfolio::latest()
+                            ->limit(4)
+                            ->get();
+                    @endphp
 
-                    <!-- Project 1 -->
-                    <div class="projects__content swiper-slide">
-                        <img src="{{ asset('frontend/assets/img/project3.jpg') }} " alt="Projects Image"
-                            class="projects__img" />
-                        <div>
-                            <span class="projects__subtitle">Design</span>
-                            <h1 class="projects__title">Application Design</h1>
-                            <a href="#" class="projects__button">
-                                View Demo <i class="ri-arrow-right-line"></i></a>
+                    @foreach ($portfolios as $portfolio)
+                        <div class="projects__content swiper-slide">
+                            <img src="{{ $portfolio->portfolio_img }} " alt="Projects Image" class="projects__img" />
+                            <div>
+                                <span class="projects__subtitle">{{ $portfolio->portfolio_name }}</span>
+                                <h1 class="projects__title">{{ $portfolio['portfolio']['portfolio_title'] }}</h1>
+                                <a href="{{ $portfolio->portfolio_url }}" class="projects__button">
+                                    View Demo <i class="ri-arrow-right-line"></i></a>
+                            </div>
                         </div>
-                    </div>
+                    @endforeach
 
-                    <!-- Project 1 -->
-                    <div class="projects__content swiper-slide">
-                        <img src="{{ asset('frontend/assets/img/project4.jpg') }} " alt="Projects Image"
-                            class="projects__img" />
-                        <div>
-                            <span class="projects__subtitle">Animation</span>
-                            <h1 class="projects__title">Animation Prototypes</h1>
-                            <a href="#" class="projects__button">
-                                View Demo <i class="ri-arrow-right-line"></i></a>
-                        </div>
-                    </div>
                 </div>
 
                 <!-- swiper arrows -->

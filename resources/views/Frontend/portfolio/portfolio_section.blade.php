@@ -3,9 +3,9 @@
     <style>
         /* project section start */
         /* .portfolio-section {
-                                                                                                                    background: #fff;
-                                                                                                                    transition: all 0.7s linear;
-                                                                                                                } */
+                                                                                                                                                                                                                background: #fff;
+                                                                                                                                                                                                                transition: all 0.7s linear;
+                                                                                                                                                                                                            } */
 
         .p-btns {
             display: flex;
@@ -110,55 +110,34 @@
     </style>
     <section class="Portfolio-section section" id="portfolio">
         <h2 class="section__title">Portfolio</h2>
-
+        @php
+            
+            $portfolioCategory = App\Models\PortfolioCategory::latest()->get();
+            $portfolios = App\Models\portfolio::latest()->get();
+            
+        @endphp
         <div class="p-btns">
-            <div class="btns p-btn" data-btn-num="1">Website</div>
-            <div class="btns p-btn" data-btn-num="2">Youtube</div>
-            <div class="btns p-btn" data-btn-num="3">Design</div>
+            @foreach ($portfolioCategory as $portfolio)
+                <div class="btns p-btn" data-btn-num={{ $portfolio->id }}>{{ $portfolio->portfolio_title }}</div>
+            @endforeach
+            {{-- <div class="btns p-btn" data-btn-num="2">Youtube</div>
+            <div class="btns p-btn" data-btn-num="3">Design</div> --}}
         </div>
+
+
         <div class="services__container container grid grid-three-column section__border portfolio-images">
 
-            <div class="img-overlay p-btn-2">
-                <img src="{{ asset('frontend/assets/img/project1.jpg') }}" alt="portfolio" />
-                <div class="overlay">
-                    <a href="" target="_suwas" class="common-heading">Project 1</a>
+            @foreach ($portfolios as $portfolio)
+                <div class="img-overlay p-btn-{{ $portfolio->portfolio_cat_id }}">
+                    <img src="{{ $portfolio->portfolio_img }}" alt="portfolio" />
+                    <div class="overlay">
+                        <a href="" target="_suwas" class="common-heading">{{ $portfolio->portfolio_name }}</a>
+                    </div>
                 </div>
-            </div>
+            @endforeach
 
-            <div class="img-overlay p-btn-1">
-                <img src="{{ asset('frontend/assets/img/project2.jpg') }}" alt="portfolio" />
-                <div class="overlay">
-                    <a href="" target="_suwas" class="common-heading">Project 2</a>
-                </div>
-            </div>
 
-            <div class="img-overlay p-btn-2 ">
-                <img src="{{ asset('frontend/assets/img/project3.jpg') }}" alt="portfolio" />
-                <div class="overlay">
-                    <a href="" target="_suwas" class="common-heading"> Project 3</a>
-                </div>
-            </div>
 
-            <div class="img-overlay p-btn-1">
-                <img src="{{ asset('frontend/assets/img/project4.jpg') }}" alt="portfolio" />
-                <div class="overlay">
-                    <a href="" target="_suwas" class="common-heading">Project 4</a>
-                </div>
-            </div>
-
-            <div class="img-overlay p-btn-3">
-                <img src="{{ asset('frontend/assets/img/project1.jpg') }}" alt="portfolio" />
-                <div class="overlay">
-                    <a href="{{ route('about.part') }}" target="_suwas" class="common-heading">Project 5</a>
-                </div>
-            </div>
-
-            <div class="img-overlay p-btn-3">
-                <img src="{{ asset('frontend/assets/img/project2.jpg') }}" alt="portfolio" />
-                <div class="overlay">
-                    <a href="https://www.youtube.com/" target="_suwas" class="common-heading"> Project 6</a>
-                </div>
-            </div>
 
 
 
