@@ -48,7 +48,7 @@
             <!-- Qualification 2 -->
             <div class="qualification__content">
                 <h3 class="qualification__title">
-                    <i class="ri-building-line"></i> Work
+                    <i class="ri-building-line"></i> Experience
                 </h3>
                 <div class="qualification__info">
                     <div>

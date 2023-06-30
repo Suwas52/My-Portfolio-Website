@@ -10,6 +10,7 @@ use App\Http\Controllers\ServicesSectionController;
 use App\Http\Controllers\PortfolioSectionController;
 use App\Http\Controllers\TestimonialSectionController;
 use App\Http\Controllers\ContactSectionController;
+use App\Http\Controllers\QualificationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -116,6 +117,16 @@ Route::controller(TestimonialSectionController::class)->group(function (){
 Route::controller(ContactSectionController::class)->group(function (){
     Route::get('/contact','ContactSection')->name('contact_section');
     Route::post('/contact/Message','ContactMessage')->name('contact_message');
+    
+ });
+
+Route::controller(QualificationController::class)->group(function (){
+    Route::get('/all/education','AllEducation')->name('all.education');
+    Route::get('/add/education','AddEducation')->name('add.education');
+    Route::post('/store/education','StoreEducation')->name('store.education');
+    Route::get('/edit/education/{id}','EditEducation')->name('edit.education');
+    Route::post('/update/education','UpdateEducation')->name('update.education');
+    Route::get('/delete/education/{id}','DeleteEducation')->name('delete.education');
     
  });
  

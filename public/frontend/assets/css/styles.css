@@ -512,7 +512,8 @@ body.dark-theme {
 }
 
 .skills__blob img {
-    width: 40px;
+    object-fit: cover;
+    width: 50px;
 }
 
 .skills__name {

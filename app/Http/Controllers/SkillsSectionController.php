@@ -73,10 +73,11 @@ class SkillsSectionController extends Controller
 
     public function StoreSkillData(Request $request){
  
+        if($request->file('skill_image')){
         
             $image = $request->file('skill_image');
             $img_name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
-            Image::make($image)->resize(1000,1200)->save('upload/skill_images/'.$img_name_gen);
+            Image::make($image)->resize(1100,1250)->save('upload/skill_images/'.$img_name_gen);
             $save_img_url = 'upload/skill_images/'.$img_name_gen;
             SkillData::insert([
                 'skill_title_id' => $request->skill_title_id ,
@@ -90,7 +91,20 @@ class SkillsSectionController extends Controller
             );
 
             return redirect()->back()->with($notification);
+        }else{
 
+            SkillData::insert([
+                'skill_title_id' => $request->skill_title_id ,
+                'skill_name' => $request->skill_name,
+            ]);
+
+            $notification = array(
+                'message' => ' Skill Inserted without image  Successfully',
+                'alert-type' => 'success'
+            );
+
+            return redirect()->back()->with($notification);
+        }
     }
 
     public function EditSkillData($id){
@@ -101,30 +115,45 @@ class SkillsSectionController extends Controller
 
     public function UpdateSkillData(Request $request){
         $skill_data_id = $request->id;
-        $skill_title_id =$request->skill_title_id;
         $old_image = $request->old_img;
 
-        $image = $request->file('skill_image');
-        $img_name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
-        Image::make($image)->resize(960,960)->save('upload/skill_images/'.$img_name_gen);
-        $save_img_url = 'upload/skill_images/'.$img_name_gen;
+        if($request->file('skill_image')){
 
-        if(file_exists($old_image)){
-            unlink($old_image);
+            $image = $request->file('skill_image');
+            $img_name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
+            Image::make($image)->resize(1100,1250)->save('upload/skill_images/'.$img_name_gen);
+            $save_img_url = 'upload/skill_images/'.$img_name_gen;
+
+            if(file_exists($old_image)){
+                unlink($old_image);
+            }
+
+            SkillData::find($skill_data_id)->update([
+                'skill_title_id' => $request->skill_title_id ,
+                'skill_name' => $request->skill_name,
+                'skill_image' => $save_img_url,
+            ]);
+
+            $notification = array(
+                'message' => ' Skill updated with Image  Successfully',
+                'alert-type' => 'success'
+            );
+
+            return redirect()->back()->with($notification);
         }
+        else{
+            SkillData::find($skill_data_id)->update([
+                'skill_title_id' => $request->skill_title_id ,
+                'skill_name' => $request->skill_name,
+            ]);
 
-        SkillData::find($skill_data_id)->update([
-            'skill_title_id' => $request->skill_title_id ,
-            'skill_name' => $request->skill_name,
-            'skill_image' => $save_img_url,
-        ]);
+            $notification = array(
+                'message' => ' Skill updated without Image Successfully',
+                'alert-type' => 'success'
+            );
 
-        $notification = array(
-            'message' => ' Skill updated  Successfully',
-            'alert-type' => 'success'
-        );
-
-        return redirect()->back()->with($notification);
+            return redirect()->back()->with($notification);
+        }
 
     }
 

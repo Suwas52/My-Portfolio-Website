@@ -68,6 +68,15 @@
 
 
         </li>
+        <li>
+            <a href="{{ route('all.education') }}" class="has-arrow">
+                <div class="parent-icon"><i class="bx bx-category"></i>
+                </div>
+                <div class="menu-title">Education</div>
+            </a>
+
+
+        </li>
 
 
 
