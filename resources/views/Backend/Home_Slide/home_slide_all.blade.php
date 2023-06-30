@@ -72,10 +72,8 @@
 
                                         </div>
                                         <div class="col-sm-9 text-secondary">
-                                            <img id="showImage"
-                                                src="{{ !empty($homeSection->home_image) ? url('upload/home_images/' . $homeSection->home_image) : url('upload/no_image.jpg') }}"
-                                                alt="Home Image" class="rounded-circle p-1 bg-primary"
-                                                style="width:100px; height:100px; ">
+                                            <img id="showImage" src="{{ asset($homeSection->home_image) }}" alt="Home Image"
+                                                class="rounded-circle p-1 bg-primary" style="width:100px; height:100px; ">
                                         </div>
                                     </div>
                                     <div class=" row">

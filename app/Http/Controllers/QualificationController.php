@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Education;
+use App\Models\Experience;
 use Carbon\Carbon;
 
 class QualificationController extends Controller
@@ -52,6 +53,14 @@ class QualificationController extends Controller
         
         $education_id = $request->id;
 
+        $request->validate([
+            'education_name' => 'required',
+            'academic_name' => 'required',
+            'years' => 'required',
+            
+        ]);
+
+
         Education::findOrFail($education_id)->update([
             'education_name' => $request->education_name,
             'academic_name' => $request->academic_name,
@@ -59,7 +68,7 @@ class QualificationController extends Controller
         ]);
 
         $notification = array(
-            'message' => ' Education  is Updated Successfull',
+            'message' => ' Education  is Updated Successfully',
             'alert-type' => 'success'
          );
 
@@ -73,6 +82,73 @@ class QualificationController extends Controller
 
         $notification = array(
             'message' => ' Education Delete  Successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->back()->with($notification);
+    }
+
+
+    //Experience
+
+    public function AllExperience(){
+        $experiences = Experience::latest()->get();
+        return view("Backend.qualification.experience.all_experience",compact('experiences'));
+    }
+
+    public function AddExperience(){
+        return view("Backend.qualification.experience.add_experience");
+    }
+
+    public function StoreExperience(Request $request){
+
+        Experience::insert([
+            'project' => $request->project,
+            'field' => $request->field,
+            'years' => $request->years,
+            'created_at' =>Carbon::now(),
+        ]);
+
+        $notification = array(
+            'message' => ' Experience  is inserted in Qualification Successfully',
+            'alert-type' => 'success'
+         );
+
+         return redirect()->route('all.experience')->with($notification);
+    }
+
+    public function EditExperience($id){
+        $experience = Experience::findOrFail($id);
+
+        return view("Backend.qualification.experience.edit_experience",compact('experience'));
+
+    }
+
+    public function UpdateExperience(Request $request){
+        
+        $experience_id = $request->id;
+
+        Experience::findOrFail($experience_id)->update([
+            'project' => $request->project,
+            'field' => $request->field,
+            'years' => $request->years,
+        ]);
+
+        $notification = array(
+            'message' => ' Experience  is Updated Successfull',
+            'alert-type' => 'success'
+         );
+
+         return redirect()->route('all.experience')->with($notification);
+       
+    }
+
+    public function DeleteExperience($id){
+        
+        Experience::findOrFail($id)->delete();
+
+        $notification = array(
+            'message' => ' Experience Delete  Successfully',
             'alert-type' => 'success'
         );
 

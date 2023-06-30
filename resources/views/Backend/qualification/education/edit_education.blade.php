@@ -36,6 +36,11 @@
                                         <div class="form-group col-sm-9 text-secondary">
                                             <input type="text" name="education_name" class="form-control"
                                                 value="{{ $education->education_name }}" />
+                                            <span class="text-danger">
+                                                @error('education_name')
+                                                    {{ $message }}
+                                                @enderror
+                                            </span>
                                         </div>
                                     </div>
                                     <div class="row m-3">
@@ -45,6 +50,11 @@
                                         <div class="form-group col-sm-9 text-secondary">
                                             <input type="text" name="academic_name" class="form-control"
                                                 value="{{ $education->academic_name }}" />
+                                            <span class="text-danger">
+                                                @error('academic_name')
+                                                    {{ $message }}
+                                                @enderror
+                                            </span>
                                         </div>
                                     </div>
                                     <div class="row m-3">
@@ -54,6 +64,11 @@
                                         <div class="form-group col-sm-9 text-secondary">
                                             <input type="text" name="years" class="form-control"
                                                 value="{{ $education->years }}" />
+                                            <span class="text-danger">
+                                                @error('years')
+                                                    {{ $message }}
+                                                @enderror
+                                            </span>
                                         </div>
                                     </div>
                                     <button type="submit" class="btn btn-primary m-3 radius-5"><i

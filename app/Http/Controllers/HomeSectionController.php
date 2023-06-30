@@ -10,7 +10,7 @@ class HomeSectionController extends Controller
 {
     public function HomeSlider(){
         $homeSection = HomeSection::findOrFail(1);
-        return view('Backend.Home_Slide.home_slide_all',compact('homeSection'));
+        return view('Admin.index',compact('homeSection'));
     }
 
     public function UpdateHome(Request $request){

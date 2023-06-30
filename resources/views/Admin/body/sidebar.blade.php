@@ -77,6 +77,15 @@
 
 
         </li>
+        <li>
+            <a href="{{ route('all.experience') }}" class="has-arrow">
+                <div class="parent-icon"><i class="bx bx-category"></i>
+                </div>
+                <div class="menu-title">Experience</div>
+            </a>
+
+
+        </li>
 
 
 

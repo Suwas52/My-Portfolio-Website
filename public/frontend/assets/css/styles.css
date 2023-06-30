@@ -329,6 +329,7 @@ body.dark-theme {
 
 .home__date {
     display: flex;
+    justify-content: space-between;
     row-gap: 1.5rem;
 }
 
@@ -435,6 +436,11 @@ body.dark-theme {
     font-weight: 900;
     color: var(--t-color);
     margin-bottom: 0.5rem;
+}
+.home_desc {
+    letter-spacing: 1px;
+    font-weight: 400;
+    color: var(--name-color);
 }
 
 .home__info-title span {
@@ -1041,6 +1047,10 @@ body.dark-theme {
         gap: 1rem 1.25rem;
     }
 
+    .footer__list {
+        margin: 2rem 0;
+        column-gap: 1.5rem;
+    }
     .skills__info {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -1051,18 +1061,18 @@ body.dark-theme {
     }
 
     .home__blob {
-        width: 330px;
-        height: 320px;
+        width: 300px;
+        height: 295px;
     }
 
     .home__perfil {
-        width: 310px;
-        height: 300px;
+        width: 288px;
+        height: 283px;
     }
 
     .home__perfil img {
-        width: 330px;
-        height: 320px;
+        width: 288px;
+        height: 283px;
     }
 }
 
@@ -1107,13 +1117,13 @@ body.dark-theme {
 
     .home__title-h3 {
         color: var(--t-color);
-        font-size: 2rem;
+        font-size: 1.7rem;
         font-weight: 700;
         letter-spacing: 3px;
     }
 
     .home__info-title {
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
 
     .home__info-title span {
@@ -1123,6 +1133,25 @@ body.dark-theme {
     .home-content .social-media a {
         width: 3rem;
         height: 3rem;
+    }
+
+    .home__blob {
+        width: 287px;
+        height: 280px;
+    }
+
+    .home__perfil {
+        width: 274px;
+        height: 266px;
+    }
+
+    .home__perfil img {
+        width: 274px;
+        height: 266px;
+    }
+
+    .home_desc {
+        font-size: 0.9rem;
     }
 }
 
@@ -1156,11 +1185,77 @@ body.dark-theme {
         justify-content: center;
         column-gap: 8rem;
     }
+
+    .home_content {
+        max-width: 400px;
+    }
+
+    .home__blob {
+        width: 300px;
+        height: 295px;
+    }
+
+    .home__perfil {
+        width: 287px;
+        height: 283px;
+    }
+
+    .home__perfil img {
+        width: 287px;
+        height: 283px;
+    }
+
+    .home_desc {
+        font-size: 1rem;
+        letter-spacing: 1px;
+        font-weight: 400;
+    }
+
+    .home__info-title {
+        font-size: 2.3rem;
+    }
+
+    .home__title-h3 {
+        font-size: 1.8rem;
+    }
 }
 
 /* For large devices */
 
 @media screen and (min-width: 1023px) {
+    .home_content {
+        max-width: 550px;
+    }
+
+    .home__blob {
+        width: 360px;
+        height: 350px;
+    }
+
+    .home__perfil {
+        width: 345px;
+        height: 335px;
+    }
+
+    .home__perfil img {
+        width: 347px;
+        height: 338px;
+    }
+
+    .home_desc {
+        font-size: 1.3rem;
+        letter-spacing: 1px;
+        font-weight: 400;
+    }
+
+    .home__info-title {
+        font-size: 2.5rem;
+    }
+
+    .home__title-h3 {
+        font-size: 2rem;
+    }
+
     .header {
         top: 0;
         bottom: initial;
@@ -1251,28 +1346,6 @@ body.dark-theme {
         margin-bottom: 5rem;
     }
 
-    .home__blob {
-        width: 380px;
-        height: 360px;
-    }
-
-    .home__perfil {
-        width: 340px;
-        height: 345px;
-    }
-
-    .home__perfil img {
-        width: 355px;
-        height: 348px;
-    }
-
-    .home__info-title {
-        font-size: 3rem;
-    }
-
-    .home__title-h3 {
-        font-size: 2.5rem;
-    }
     .btn {
         padding: 1rem 1.4rem;
         font-size: 1rem;

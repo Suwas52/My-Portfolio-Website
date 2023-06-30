@@ -24,34 +24,26 @@
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-body">
-                                <form method="post" id="myForm" action="{{ route('store.education') }}">
+                                <form method="post" id="myForm" action="{{ route('store.experience') }}">
                                     @csrf
                                     <div class="row m-3">
                                         <div class="col-sm-3">
-                                            <h6 class="mb-0">Education Name</h6>
+                                            <h6 class="mb-0">Project Name</h6>
                                         </div>
                                         <div class="form-group col-sm-9 text-secondary">
-                                            <input type="text" name="education_name" class="form-control"
-                                                placeholder="Enter Education Name" />
-                                            <span class="text-danger">
-                                                @error('education_name')
-                                                    {{ $message }}
-                                                @enderror
-                                            </span>
+                                            <input type="text" name="project" class="form-control"
+                                                placeholder="Enter Project Name" />
+
                                         </div>
                                     </div>
                                     <div class="row m-3">
                                         <div class="col-sm-3">
-                                            <h6 class="mb-0">Academic Name</h6>
+                                            <h6 class="mb-0">field Name</h6>
                                         </div>
                                         <div class="form-group col-sm-9 text-secondary">
-                                            <input type="text" name="academic_name" class="form-control"
-                                                placeholder="Enter Academic Name" />
-                                            <span class="text-danger">
-                                                @error('academic_name')
-                                                    {{ $message }}
-                                                @enderror
-                                            </span>
+                                            <input type="text" name="field" class="form-control"
+                                                placeholder="Enter Field Name" />
+
                                         </div>
                                     </div>
                                     <div class="row m-3">
@@ -61,11 +53,7 @@
                                         <div class="form-group col-sm-9 text-secondary">
                                             <input type="text" name="years" class="form-control"
                                                 placeholder="Enter Year Name" />
-                                            <span class="text-danger">
-                                                @error('years')
-                                                    {{ $message }}
-                                                @enderror
-                                            </span>
+
                                         </div>
                                     </div>
                                     <button type="submit" class="btn btn-primary m-3 radius-5"><i

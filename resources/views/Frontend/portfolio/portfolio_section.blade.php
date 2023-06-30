@@ -3,6 +3,7 @@
     <style>
         .p-btns {
             display: flex;
+            flex-wrap: wrap;
             justify-content: center;
             align-items: center;
             gap: 2.2rem;
@@ -79,7 +80,7 @@
 
         .btns:hover,
             {
-            /* box-shadow: 0 2rem 2rem 0 rgb(132 144 255 / 30%); */
+
             box-shadow: var(--shadowSupport);
         }
 
@@ -101,6 +102,33 @@
         .grid-four-column {
             grid-template-columns: repeat(4, 1fr);
         }
+
+
+        @media screen and (max-width: 576px) {
+            .btns {
+                padding: 0.2rem 0.4rem;
+                font-size: 0.6rem;
+                font-weight: 400;
+            }
+
+            .p-btns {
+                gap: 1.3rem;
+
+            }
+
+            .portfolio-images {
+                gap: 2rem;
+
+            }
+        }
+
+        @media screen and (max-width: 767px) {
+            .btns {
+                padding: 0.3rem 0.7rem;
+                font-size: 0.8rem;
+                font-weight: 400;
+            }
+        }
     </style>
     <section class="Portfolio-section section" id="portfolio">
         <h2 class="section__title">Portfolio</h2>
@@ -119,13 +147,14 @@
         </div>
 
 
-        <div class="services__container container grid grid-three-column section__border portfolio-images">
+        <div class="portfolio__container container grid grid-three-column section__border portfolio-images">
 
             @foreach ($portfolios as $portfolio)
                 <div class="img-overlay p-btn-{{ $portfolio->portfolio_cat_id }}">
                     <img src="{{ $portfolio->portfolio_img }}" alt="portfolio" />
                     <div class="overlay">
-                        <a href="" target="_suwas" class="common-heading">{{ $portfolio->portfolio_name }}</a>
+                        <a href="{{ $portfolio->portfolio_url }}" target="_suwas"
+                            class="common-heading">{{ $portfolio->portfolio_name }}</a>
                     </div>
                 </div>
             @endforeach
@@ -151,7 +180,7 @@
             console.log(btn_num);
 
             const img_active = document.querySelectorAll(`.p-btn-${btn_num}`);
-            console.log(img_active);
+            // console.log(img_active);
 
 
             p_img_elem.forEach((curElem) => curElem.classList.toggle('p-img-not-active'));

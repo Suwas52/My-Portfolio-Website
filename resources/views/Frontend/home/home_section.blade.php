@@ -5,14 +5,14 @@
 
 <section class="home section" id="home">
     <div class="home__container container grid section__border">
-        <div class="home__date grid">
+        <div class="home__date ">
             <div class="home_content">
                 <h3 class="home__title-h3">{{ $homeSection->short_title }}</h3>
                 <h1 class="home__info-title">
                     I'm
                     <span> {{ $homeSection->title }} <br /> </span>
                 </h1>
-                <p>
+                <p class="home_desc">
                     {{ $homeSection->home_des }}
                 </p>
 

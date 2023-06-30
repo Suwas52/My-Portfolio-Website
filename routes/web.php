@@ -127,6 +127,15 @@ Route::controller(QualificationController::class)->group(function (){
     Route::get('/edit/education/{id}','EditEducation')->name('edit.education');
     Route::post('/update/education','UpdateEducation')->name('update.education');
     Route::get('/delete/education/{id}','DeleteEducation')->name('delete.education');
+
+
+    //Experience
+    Route::get('/all/experience','AllExperience')->name('all.experience');
+    Route::get('/add/experience','AddExperience')->name('add.experience');
+    Route::post('/store/experience','StoreExperience')->name('store.experience');
+    Route::get('/edit/experience/{id}','EditExperience')->name('edit.experience');
+    Route::post('/update/experience','UpdateExperience')->name('update.experience');
+    Route::get('/delete/experience/{id}','DeleteExperience')->name('delete.experience');
     
  });
  
