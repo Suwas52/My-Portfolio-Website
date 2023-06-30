@@ -78,6 +78,12 @@ Route::controller(SkillsSectionController::class)->group(function (){
 
 Route::controller(ServicesSectionController::class)->group(function (){
     Route::get('/services','ServicesSection')->name('services.section');
+    Route::get('/all/services','AllServices')->name('all.services');
+    Route::get('/add/services','AddServices')->name('add.services');
+    Route::post('/store/services','StoreServices')->name('store.services');
+    Route::get('/edit/services/{id}','EditServices')->name('edit.services');
+    Route::post('/update/services','UpdateServices')->name('update.services');
+    Route::get('/delete/services/{id}','DeleteServices')->name('delete.services');
 
  });
 

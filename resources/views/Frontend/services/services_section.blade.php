@@ -13,52 +13,58 @@
 
         {{-- <span class="section__subtitle"> What i offer </span> --}}
 
+        @php
+            $services = App\Models\Services::latest()->get();
+        @endphp
+
         <div class="services__container container grid section__border">
-            <div class="services__card">
-                <i class="ri-layout-4-line"></i>
 
-                <h2 class="services__title">
-                    UI/UX <br />
-                    Designer
-                </h2>
 
-                <p class="services__description">
-                    Service that provides the best quality and at the request of the
-                    client, with professional work and customer support.
-                </p>
+            @foreach ($services as $service)
+                <div class="services__card">
+                    <i class="ri-{{ $service->logo }}"></i>
 
-                <div class="services__border"></div>
-            </div>
-            <div class="services__card">
-                <i class="ri-code-line"></i>
+                    <h2 class="services__title">
+                        {{ $service->service_name }}
+                    </h2>
 
-                <h2 class="services__title">
-                    Website <br />
-                    Design
-                </h2>
+                    <p class="services__description">
+                        {{ $service->service_desc }}
+                    </p>
 
-                <p class="services__description">
-                    Service that provides the best quality and at the request of the
-                    client, with professional work and customer support.
-                </p>
+                    <div class="services__border"></div>
+                </div>
+            @endforeach
+            <!--<div class="services__card">
+                            <i class="ri-code-line"></i>
 
-                <div class="services__border"></div>
-            </div>
-            <!-- <div class="services__card">
-                                                                            <i class="ri-quill-pen-line"></i>
+                            <h2 class="services__title">
+                                Web <br />
+                                Development
+                            </h2>
 
-                                                                            <h2 class="services__title">
-                                                                              Digital <br />
-                                                                              Animator
-                                                                            </h2>
+                            <p class="services__description">
+                                Service that provides the best quality and at the request of the
+                                client, with professional work and customer support.
+                            </p>
 
-                                                                            <p class="services__description">
-                                                                              Service that provides the best quality and at the request of the
-                                                                              client, with professional work and customer support.
-                                                                            </p>
+                            <div class="services__border"></div>
+                        </div>
+                         <div class="services__card">
+                                                                                                    <i class="ri-quill-pen-line"></i>
 
-                                                                            <div class="services__border"></div>
-                                                                          </div> -->
+                                                                                                    <h2 class="services__title">
+                                                                                                      Digital <br />
+                                                                                                      Animator
+                                                                                                    </h2>
+
+                                                                                                    <p class="services__description">
+                                                                                                      Service that provides the best quality and at the request of the
+                                                                                                      client, with professional work and customer support.
+                                                                                                    </p>
+
+                                                                                                    <div class="services__border"></div>
+                                                                                                  </div> -->
         </div>
     </section>
 @endsection
