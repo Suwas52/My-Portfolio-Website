@@ -11,6 +11,7 @@ use App\Http\Controllers\PortfolioSectionController;
 use App\Http\Controllers\TestimonialSectionController;
 use App\Http\Controllers\ContactSectionController;
 use App\Http\Controllers\QualificationController;
+use App\Http\Controllers\FooterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -143,6 +144,14 @@ Route::controller(QualificationController::class)->group(function (){
     Route::post('/update/experience','UpdateExperience')->name('update.experience');
     Route::get('/delete/experience/{id}','DeleteExperience')->name('delete.experience');
     
+ });
+
+ 
+Route::controller(FooterController::class)->group(function (){
+    
+    Route::get('/footer/section','FooterSection')->name('all.footer');
+    Route::post('/update/footer','UpdateFooter')->name('update.footer');
+
  });
  
 

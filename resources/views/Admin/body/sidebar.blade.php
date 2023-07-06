@@ -95,6 +95,15 @@
 
 
         </li>
+        <li>
+            <a href="{{ route('all.footer') }}" class="has-arrow">
+                <div class="parent-icon"><i class="bx bx-category"></i>
+                </div>
+                <div class="menu-title">Footer</div>
+            </a>
+
+
+        </li>
 
 
 

@@ -62,15 +62,8 @@
                                                 </div>
                                                 <x-input-error :messages="$errors->get('password')" class="mt-2 text-danger" />
                                             </div>
-                                            <div class="col-md-6">
-                                                <div class="form-check form-switch">
-                                                    <input class="form-check-input" type="checkbox"
-                                                        id="flexSwitchCheckChecked" checked>
-                                                    <label class="form-check-label"
-                                                        for="flexSwitchCheckChecked">Remember Me</label>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6 text-end"> <a
+
+                                            <div class="col-md-6 text-center"> <a
                                                     href="{{ route('password.request') }}">Forgot Password ?</a>
 
                                             </div>
@@ -81,8 +74,7 @@
                                                             class="bx bxs-lock-open"></i>Sign in</button>
                                                 </div>
                                             </div>
-                                            <h4 class="text-center">Create account? <a
-                                                    href="{{ route('register') }}">Sign Up</a></h4>
+
                                         </form>
                                     </div>
                                 </div>

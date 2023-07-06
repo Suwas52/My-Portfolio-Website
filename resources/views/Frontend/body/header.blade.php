@@ -1,11 +1,14 @@
 <header class="header" id="header">
+    @php
+        $footer = App\Models\Footer::findOrFail(1);
+    @endphp
     <nav class="nav container">
-        <a href="{{ route('main-page') }}" class="nav__logo"> Subash </a>
+        <a href="{{ route('main-page') }}" class="nav__logo"> {{ $footer->logo }}</a>
 
         <div class="nav__menu" id="nav-menu">
             <ul class="nav__list grid">
                 <li class="nav__item">
-                    <a href="{{ route('main-page') }}" class="nav__link active-link">
+                    <a href="{{ route('main-page') }}" class="nav__link ">
                         <i class="ri-home-5-line"></i> Home
                     </a>
                 </li>

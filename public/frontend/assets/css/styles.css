@@ -256,6 +256,7 @@ body.dark-theme {
 .nav__logo {
     font-family: "Qwitcher Grypen", cursive;
     font-size: 2rem;
+    margin-top: 25px;
 }
 
 .nav__toggle {
@@ -978,6 +979,7 @@ body.dark-theme {
 }
 
 .footer__social-link:hover {
+    color: var(--text-color-light);
     transform: translateY(-0.15rem);
 }
 
@@ -1110,6 +1112,10 @@ body.dark-theme {
 }
 
 @media screen and (max-width: 767px) {
+    .home__container {
+        justify-content: center;
+        column-gap: 10rem;
+    }
     .home__date {
         display: grid;
         text-align: center;
@@ -1483,24 +1489,7 @@ body.dark-theme {
         row-gap: 2.5rem;
     }
 
-    .footer__container {
+    /* .footer__container {
         padding: 4rem 0 3rem;
-    }
-
-    .footer__list {
-        column-gap: 3rem;
-        margin: 3rem 0;
-    }
-
-    .footer__social {
-        column-gap: 2rem;
-    }
-
-    .footer__social-link {
-        font-size: 1.5rem;
-    }
-
-    .footer__copy {
-        margin-top: 5rem;
-    }
+    } */
 }
