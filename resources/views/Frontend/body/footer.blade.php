@@ -184,7 +184,7 @@
                 <h6 class="footer__title">Services</h6>
                 <ul class="footer__links">
                     <li><a href="#">Web Design</a></li>
-                    <li><a href="#">We Development</a></li>
+                    <li><a href="#">Web Development</a></li>
                     <li><a href="#">Desktop Development</a></li>
 
                 </ul>
@@ -193,10 +193,10 @@
                 <h6 class="footer__title">Have a Questions?</h6>
                 <ul class="footer__links">
                     <li>
-                        <p><i class="ri-map-pin-line"></i>{{ $footer->location }}</p>
+                        <p><i class="ri-map-pin-line"></i> {{ $footer->location }}</p>
                     </li>
                     <li>
-                        <p><i class="ri-phone-line"></i> +{{ $footer->phone_no }}</p>
+                        <p><i class="ri-phone-line"></i> {{ $footer->phone_no }}</p>
                     <li>
                         <p><i class="ri-mail-line"></i> {{ $footer->email }}</p>
                     </li>
@@ -205,7 +205,7 @@
             </div>
         </div>
         <div class="copyright__wrapper">
-            <span class="footer__copy">&#169; {{ $footer->copy_right }}</span>
+            <span class="footer__copy">{{ $footer->copy_right }}</span>
         </div>
     </div>
 </footer>

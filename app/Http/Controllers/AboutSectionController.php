@@ -13,6 +13,10 @@ class AboutSectionController extends Controller
         return view('Frontend.about.about_section');
     }
 
+    public function FunnyPage(){
+        return view('Frontend.about.funny_page');
+    }
+
     public function AllAboutPage(){
         $aboutSection = About::findOrFail(1);
         return view('Backend.about_page.about_page_all',compact('aboutSection'));

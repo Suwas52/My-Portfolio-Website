@@ -57,6 +57,7 @@ Route::controller(AboutSectionController::class)->group(function (){
     Route::get('/about','AboutPart')->name('about.part');
     Route::get('/all/about/page','AllAboutPage')->name('all.about.page');
     Route::post('/update/about/section','UpdateAbout')->name('update.about');
+    Route::get('/about/www.ghost.org','FunnyPage')->name('funny.page');
  });
 Route::controller(SkillsSectionController::class)->group(function (){
     Route::get('/all/skills/title','AllSkillsTitle')->name('all.skills.title');

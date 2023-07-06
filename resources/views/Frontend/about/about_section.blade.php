@@ -27,7 +27,8 @@
                 <h3 class="content-description">
                     {{ $aboutSection->short_des }}</h3>
                 <h3 class="content-description">
-                    {{ $aboutSection->long_des }}
+                    {{ $aboutSection->long_des }} <a href="{{ route('funny.page') }}" style="color: #585978;"> ghost</a> and
+                    hosted in <a href="https://nestnepal.com/" style="color: #585978;">Nest Nepal</a>
                 </h3>
                 <h3 class="content-description">
                     {{ $aboutSection->about_end }}</h3>

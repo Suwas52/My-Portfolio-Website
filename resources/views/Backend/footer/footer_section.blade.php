@@ -29,7 +29,7 @@
                                 <form method="post" id="myForm" action="{{ route('update.footer') }}">
                                     @csrf
 
-                                    <input type="text" name="id" value="{{ $footerSection->id }}">
+                                    <input type="hidden" name="id" value="{{ $footerSection->id }}">
 
                                     <div class="row mb-3">
                                         <div class="col-sm-3">
