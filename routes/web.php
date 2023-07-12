@@ -92,6 +92,7 @@ Route::controller(ServicesSectionController::class)->group(function (){
 
 Route::controller(PortfolioSectionController::class)->group(function (){
     Route::get('/portfolio','PortfolioSection')->name('portfolio.section');
+    Route::get('/portfolio/{id}','PortfolioDetails')->name('portfolio.details');
     Route::get('/all/portfolio/title','AllPortfolioTitle')->name('all.portfolio_title');
     Route::get('/add/portfolio/title','AddPortfolioTitle')->name('add.portfolio_title');
     Route::post('/store/portfolio/title','StorePortfolioTitle')->name('store.portfolio_title');

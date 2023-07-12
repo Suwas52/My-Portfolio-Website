@@ -14,12 +14,14 @@
 
                 @foreach ($portfolios as $portfolio)
                     <div class="projects__content swiper-slide">
-                        <img src="{{ $portfolio->portfolio_img }} " alt="Projects Image" class="projects__img" />
+                        <a href="{{ route('portfolio.details', $portfolio->id) }}"> <img
+                                src="{{ $portfolio->portfolio_img }} " alt="Projects Image" class="projects__img" /></a>
+
                         <div>
                             <span class="projects__subtitle">{{ $portfolio->portfolio_name }}</span>
                             <h1 class="projects__title">{{ $portfolio['portfolio']['portfolio_title'] }}</h1>
-                            <a href="{{ $portfolio->portfolio_url }}" class="projects__button">
-                                View Demo <i class="ri-arrow-right-line"></i></a>
+                            {{-- <a href="{{ $portfolio->portfolio_url }}" class="projects__button">
+                                View Demo <i class="ri-arrow-right-line"></i></a> --}}
                         </div>
                     </div>
                 @endforeach

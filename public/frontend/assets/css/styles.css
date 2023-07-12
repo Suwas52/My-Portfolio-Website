@@ -13,6 +13,7 @@
     /*Color mode HSL(hue, saturation, lightness)*/
     --main-color: #754ef9;
     --t-color: #3d535f;
+    --h-color: #75909e;
     --first-color: hsl(207, 65%, 65%);
     --title-color: hsl(207, 4%, 16%);
     --text-color: hsl(207, 4%, 28%);
@@ -143,6 +144,7 @@ body.dark-theme {
     --body-color: hsl(207, 4%, 10%);
     --container-color: hsl(207, 4%, 12%);
     --t-color: #75909e;
+    --h-color: #3d535f;
 }
 
 /*========== 
@@ -382,18 +384,18 @@ body.dark-theme {
 }
 
 .home__social-link:hover {
-    color: var(--text-color-light);
+    color: var(--h-color);
     transform: translateY(-0.15rem);
 }
 
 .btn {
     display: inline-block;
     padding: 1rem 1.2rem;
-    background: var(--text-color-light);
+    background: var(--t-color);
     border-radius: 0.6rem;
     box-shadow: 0 0.4rem 1.5rem var(--shadow-color);
     font-size: 0.9rem;
-    color: var(--container-color);
+    color: #fff;
     letter-spacing: 0.1rem;
     font-weight: 400;
     transition: 0.5s ease;
@@ -403,7 +405,7 @@ body.dark-theme {
 
 .btn:hover {
     transform: translateX(0.15rem);
-    background: var(--t-color);
+    background: var(--h-color);
 }
 
 /* .home__info {
@@ -1239,13 +1241,13 @@ body.dark-theme {
     }
 
     .home__perfil {
-        width: 345px;
-        height: 335px;
+        width: 347px;
+        height: 337px;
     }
 
     .home__perfil img {
-        width: 347px;
-        height: 338px;
+        width: 349px;
+        height: 340px;
     }
 
     .home_desc {

@@ -153,7 +153,7 @@
                 <div class="img-overlay p-btn-{{ $portfolio->portfolio_cat_id }}">
                     <img src="{{ $portfolio->portfolio_img }}" alt="portfolio" />
                     <div class="overlay">
-                        <a href="{{ $portfolio->portfolio_url }}" target="_suwas"
+                        <a href="{{ route('portfolio.details', $portfolio->id) }}" target="_suwas"
                             class="common-heading">{{ $portfolio->portfolio_name }}</a>
                     </div>
                 </div>

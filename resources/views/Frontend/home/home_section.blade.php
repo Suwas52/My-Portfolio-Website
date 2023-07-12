@@ -2,7 +2,19 @@
     $homeSection = App\Models\HomeSection::findOrFail(1);
 @endphp
 
-
+<style>
+    .btn {
+        height: 50px;
+        width: 120px;
+        font-size: 12px;
+        padding: 10px;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* background-color: var(--name-color); */
+    }
+</style>
 <section class="home section" id="home">
     <div class="home__container container grid section__border">
         <div class="home__date ">

@@ -13,6 +13,14 @@ class PortfolioSectionController extends Controller
         return view('Frontend.portfolio.portfolio_section');
     }
 
+    public function PortfolioDetails($id){
+
+        $portfolio = portfolio::findOrFail($id);
+        
+
+        return view('Frontend.portfolio.portfolio_details',compact('portfolio'));
+    }
+
     public function AllPortfolioTitle(){
         $portfolio_title = PortfolioCategory::latest()->get();
         return view('Backend.portfolio.all_portfolio_category',compact('portfolio_title'));

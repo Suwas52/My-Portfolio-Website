@@ -103,6 +103,13 @@ const scrollUp = () => {
     this.scrollY >= 350
         ? scrollUp.classList.add("show-scroll")
         : scrollUp.classList.remove("show-scroll");
+
+    const scrollActive = document.querySelector(".show-scroll");
+    if (scrollActive) {
+        scrollActive.addEventListener("click", () => {
+            window.scrollTo(0, 0);
+        });
+    }
 };
 window.addEventListener("scroll", scrollUp);
 
