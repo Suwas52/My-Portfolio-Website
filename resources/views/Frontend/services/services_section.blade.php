@@ -1,4 +1,4 @@
-@extends('Frontend.main_master')
+{{-- @extends('Frontend.main_master')
 @section('Frontend')
     <style>
         .section__title {
@@ -13,7 +13,7 @@
 
         {{-- <span class="section__subtitle"> What i offer </span> --}}
 
-        @php
+{{-- @php
             $services = App\Models\Services::latest()->get();
         @endphp
 
@@ -34,8 +34,8 @@
 
                     <div class="services__border"></div>
                 </div>
-            @endforeach
-            <!--<div class="services__card">
+            @endforeach --}}
+<!--<div class="services__card">
                             <i class="ri-code-line"></i>
 
                             <h2 class="services__title">
@@ -65,6 +65,6 @@
 
                                                                                                     <div class="services__border"></div>
                                                                                                   </div> -->
-        </div>
+{{-- </div>
     </section>
-@endsection
+@endsection --}}

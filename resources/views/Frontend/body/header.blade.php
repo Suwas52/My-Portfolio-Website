@@ -22,14 +22,14 @@
                         <i class="ri-book-open-line"></i> Qualification
                     </a>
                 </li> --}}
-                <li class="nav__item">
+                {{-- <li class="nav__item">
                     <a href="{{ route('services.section') }}" class="nav__link">
                         <i class="ri-briefcase-line"></i> Services
                     </a>
-                </li>
+                </li> --}}
                 <li class="nav__item">
                     <a href="{{ route('portfolio.section') }}" class="nav__link">
-                        <i class="ri-image-line"></i> Portfolio
+                        <i class="ri-image-line"></i> Projects
                     </a>
                 </li>
                 <li class="nav__item">

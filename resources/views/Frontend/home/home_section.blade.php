@@ -41,10 +41,10 @@
                             class="ri-github-line"></i></a>
                 </div>
 
-                <div class="CV__button">
+                {{-- <div class="CV__button">
                     <a href="#" class="btn">Download CV</a>
                     <!-- <a href="#" class="btn">Hire Me</a> -->
-                </div>
+                </div> --}}
             </div>
 
             <div class="home__blob grid">

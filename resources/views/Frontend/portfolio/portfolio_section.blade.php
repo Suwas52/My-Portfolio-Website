@@ -79,9 +79,9 @@
         }
 
         .btns:hover,
-            {
+        {
 
-            box-shadow: var(--shadowSupport);
+        box-shadow: var(--shadowSupport);
         }
 
 
@@ -135,7 +135,9 @@
         @php
             
             $portfolioCategory = App\Models\PortfolioCategory::latest()->get();
-            $portfolios = App\Models\portfolio::latest()->get();
+            $portfolios = App\Models\portfolio::latest()
+                ->orderBy('id', 'desc')
+                ->get();
             
         @endphp
         <div class="p-btns">
@@ -153,6 +155,8 @@
                 <div class="img-overlay p-btn-{{ $portfolio->portfolio_cat_id }}">
                     <img src="{{ $portfolio->portfolio_img }}" alt="portfolio" />
                     <div class="overlay">
+                        {{-- <a href="{{ $portfolio->portfolio_url }}" target="_suwas"
+                            class="common-heading">{{ $portfolio->portfolio_name }}</a> --}}
                         <a href="{{ route('portfolio.details', $portfolio->id) }}" target="_suwas"
                             class="common-heading">{{ $portfolio->portfolio_name }}</a>
                     </div>

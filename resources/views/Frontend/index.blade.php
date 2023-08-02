@@ -25,7 +25,7 @@
 
 
     <!--==================== TESTIMONIAL starts ====================-->
-    @include('Frontend.testimonial.testimonial_section')
+    {{-- @include('Frontend.testimonial.testimonial_section') --}}
 
     <!--==================== TESTIMONIAL ends ====================-->
 

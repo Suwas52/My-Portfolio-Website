@@ -20,7 +20,7 @@
     }
 
     .footer-widget:nth-child(1) {
-        width: calc(38% - 50px);
+        width: calc(35% - 50px);
         margin-right: 30px;
     }
 
@@ -30,12 +30,12 @@
     }
 
     .footer-widget:nth-child(3) {
-        width: calc(20% - 30px);
+        width: calc(27% - 30px);
 
     }
 
     .footer-widget:nth-child(4) {
-        width: calc(27% - 30px);
+        width: calc(23% - 30px);
 
     }
 
@@ -142,7 +142,7 @@
                 <p class="desc">
                     {{ $footer->footer_desc }}
                 </p>
-                <ul class="socials">
+                {{-- <ul class="socials">
 
                     <a href="https://www.facebook.com/su.waas.5/" target="_blank" class="footer__social-link"><i
                             class="ri-facebook-box-line"></i></a>
@@ -168,19 +168,19 @@
 
 
 
-                </ul>
+                </ul> --}}
             </div>
             <div class="footer-widget">
                 <h6 class="footer__title">Quick Link</h6>
                 <ul class="footer__links">
                     <li><a href="{{ route('main-page') }}">Home</a></li>
                     <li><a href="{{ route('about.part') }}">About</a></li>
-                    <li><a href="{{ route('services.section') }}">Services</a></li>
+                    {{-- <li><a href="{{ route('services.section') }}">Services</a></li> --}}
                     <li><a href="{{ route('portfolio.section') }}">Portfolio</a></li>
                     <li><a href="{{ route('contact_section') }}">Contact</a></li>
                 </ul>
             </div>
-            <div class="footer-widget">
+            {{-- <div class="footer-widget">
                 <h6 class="footer__title">Services</h6>
                 <ul class="footer__links">
                     <li><a href="#">Web Design</a></li>
@@ -188,7 +188,7 @@
                     <li><a href="#">Desktop Development</a></li>
 
                 </ul>
-            </div>
+            </div> --}}
             <div class="footer-widget">
                 <h6 class="footer__title">Have a Questions?</h6>
                 <ul class="footer__links">
@@ -200,6 +200,36 @@
                     <li>
                         <p><i class="ri-mail-line"></i> {{ $footer->email }}</p>
                     </li>
+
+                </ul>
+            </div>
+            <div class="footer-widget">
+                <h6 class="footer__title">Follow Me</h6>
+                <ul class="socials">
+
+                    <a href="https://www.facebook.com/su.waas.5/" target="_blank" class="footer__social-link"><i
+                            class="ri-facebook-box-line"></i></a>
+
+
+                    <a href="https://twitter.com/suwas_danuwar" target="_blank" class="footer__social-link"><i
+                            class="ri-twitter-line"></i></a>
+
+
+                    <a href="https://www.instagram.com/su_waas52/" target="_blank" class="footer__social-link"><i
+                            class="ri-instagram-line"></i></a>
+
+
+                    <a href="https://www.linkedin.com/in/subash-danuwar/" target="_blank" class="footer__social-link"><i
+                            class="ri-linkedin-box-line"></i></a>
+
+
+                    <a href="https://github.com/Suwas52" target="_blank" class="footer__social-link"><i
+                            class="ri-github-line"></i></a>
+
+
+
+
+
 
                 </ul>
             </div>

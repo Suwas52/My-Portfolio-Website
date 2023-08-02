@@ -8,6 +8,7 @@
 
                 @php
                     $portfolios = App\Models\portfolio::latest()
+                        ->orderBy('id', 'desc')
                         ->limit(4)
                         ->get();
                 @endphp
@@ -20,8 +21,8 @@
                         <div>
                             <span class="projects__subtitle">{{ $portfolio->portfolio_name }}</span>
                             <h1 class="projects__title">{{ $portfolio['portfolio']['portfolio_title'] }}</h1>
-                            {{-- <a href="{{ $portfolio->portfolio_url }}" class="projects__button">
-                                View Demo <i class="ri-arrow-right-line"></i></a> --}}
+                            <a href="{{ $portfolio->portfolio_url }}" class="projects__button">
+                                View Demo <i class="ri-arrow-right-line"></i></a>
                         </div>
                     </div>
                 @endforeach
